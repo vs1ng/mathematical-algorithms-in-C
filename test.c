@@ -1,9 +1,11 @@
 #include <stdio.h>
-#include "toughmath.h"
-
-int main(){
-    int m = 7;
-    int fact = factorial(m);
-    printf("the factorial of 4 is %d",fact);
+#include <stdlib.h>
+int main(int c,char *arg[]){
+    char number = *arg[1];
+    int i = 0;
+    while ( arg[1][i] != '\0' ) {
+        i++;
+    }
+    printf("number of digits: %d",i);
     return 0;
 }

@@ -8,7 +8,13 @@ static void closeNicely(int signal){
     exit(EXIT_SUCCESS);
 }
 
-int main(int agrc, char *argv[]){
+int main(int argc, char *argv[]){
+    signal(SIGSEGV,closeNicely);
+
+    if ( argc != 2 ) {
+        puts("[!] Hey, insufficient arguements!. Exiting.");
+        exit(EXIT_SUCCESS);
+    }
     int n = atoi(argv[1]);
     printf("%d! =",n); 
     int k = 1;
