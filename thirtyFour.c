@@ -1,4 +1,3 @@
-#include "access.h"
 #include <stdio.h>
 #include <signal.h>
 #include <stdlib.h>
@@ -9,7 +8,8 @@ static void closeNicely(int signal){
     exit(EXIT_SUCCESS);
 }
 
-int factorial(int n){
+int main(int argc, char *argv[]){
+    int n = atoi(argv[1]);
     printf("%d! =",n); 
     int k = 1;
     for(;n!=0;n--){
