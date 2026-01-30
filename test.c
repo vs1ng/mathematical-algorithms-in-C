@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main(int c,char *arg[]){
-    char number = *arg[1];
-    int i = 0;
-    while ( arg[1][i] != '\0' ) {
-        i++;
+int main(){
+    char *name="hello";
+    int size = 0;
+    while (name[size] != '\0'){size++;}
+    for(int i = size ; i != 0 ; i-- ){
+        printf("%c",name[i-1]);
     }
-    printf("number of digits: %d",i);
     return 0;
 }
