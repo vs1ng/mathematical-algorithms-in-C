@@ -11,10 +11,28 @@ int main(int c, char *args[]){
     }
     int inputSize = 0;
     while(args[1][inputSize] != '\0'){inputSize++;}
-    int * NumberT = calloc(inputSize,sizeof(int));
+    char * NumberT = calloc(inputSize,sizeof(char));
+    int index = 0;
     for(int location = inputSize; location != 0 ; location--){
-      printf("%c ",args[1][location-1]);  
+      *(NumberT+index) = args[1][location-1];
+      index++;
     }
+    int ispl = 1;
+    for(int i = 0; i < inputSize ; i++){
+        if((*(NumberT+i) ^ args[1][i])){
+                ispl=0;
+                break;
+        }
+    }
+    
+    if(ispl){
+        puts("Is a palindrome!");
+    } else {
+        puts("Not a palindrome!");
+    }
+                
+    free(NumberT);
     r0;
+
 }
 
