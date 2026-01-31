@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
@@ -8,19 +9,12 @@ int main(int c, char *args[]){
         puts("[!] Insufficient arguements, fix.");
         exit(EXIT_FAILURE);
     }
-    char *str = args[1];
-    int len = 0;
-    while (str[len]) len++;
-    
-    int is_palindrome = 1;
-    for (int i = 0; i < len / 2; i++) {
-        if (str[i] != str[len - 1 - i]) {
-            is_palindrome = 0;
-            break;
-        }
+    int inputSize = 0;
+    while(args[1][inputSize] != '\0'){inputSize++;}
+    int * NumberT = calloc(inputSize,sizeof(int));
+    for(int location = inputSize; location != 0 ; location--){
+      printf("%c ",args[1][location-1]);  
     }
-    
-    printf("%s\n", is_palindrome ? "palindrome" : "not palindrome");
     r0;
 }
 
